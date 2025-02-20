@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gree Split AC Catalog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+     
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      padding: 2rem;
+      display: flex;
+      justify-content:center;
+    }
+
+    .catalog {
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+     margin-top: 70px;
+    }
+
+    .product-card {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-info {
+      margin-top: 1rem;
+    }
+
+    .product-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .product-price {
+      font-size: 1rem;
+      color: #888;
+      margin-top: 0.5rem;
+    }
+
+    .product-model {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .product-type {
+      font-size: 0.85rem;
+      background-color: #e0f7fa;
+      color: #00796b;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .viewmore button{
+      height: 40px;
+      width:100px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+     margin-left: 550px;
+     border-radius: 30px;
+     justify-content: center  ;
+     
+    }
+
+    .popover {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 150px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+#productModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: white;
+        margin: 10% auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .product-details-content {
+        display: flex;
+    }
+
+    .product-details-content img {
+        width: 40%;
+        margin-right: 20px;
+    }
+
+    .product-details-content .product-details {
+        width: 60%;
+    }
+  </style>
+</head>
+<body>
+  <div class="catalog">
+    <h1 class="title">Gree</h1>
+    <h1> Split AC</h1>
+    <div class="product-grid">
+      <div class="product-card" onclick="showProductDetails()">
+        <img src="data:image/jpeg;base64,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" alt="Gree AC Lomo">
+        <div class="product-info">
+            <div class="product-name">GREE Split AC 1.5 TON Lomo Series (Fixed Speed)</div>
+            <div class="product-price">PKR 235,900</div>
+            <div class="product-model">Model: GS-24LM6L</div>
+            <div class="product-type">24000 BTUs - 2 Ton</div>
+        </div>
+        <div class="popover" id="popover1">
+            <p>This is more detailed information about the product that appears when hovering over the product.</p>
+        </div>
+    </div>
+    
+    <!-- Modal structure for product details -->
+    <div id="productModal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetails()">×</span>
+            <h2>Product Details</h2>
+            <div class="product-details-content">
+        <img src="data:image/jpeg;base64,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" alt="Gree AC Lomo">
+                <div class="product-details">
+                    <h3>GREE Split AC 1.5 TON Lomo Series (Fixed Speed)</h3>
+                    <p>Price: PKR 215,900</p>
+                    <p>Model: GS-24LM6L</p>
+                    <p>Capacity: 23000 BTUs - 2 Ton</p>
+                    <p>Additional Details: This is a more detailed description of the product with all specifications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" onclick="showProductDetails()">
+                <img src="data:image/jpeg;base64,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" alt="Gree AC Pular">
+      <div class="product-info">
+          <div class="product-name">GREE Split AC 2 TON Lomo Series (Fixed Speed)</div>
+          <div class="product-price">PKR 285,900</div>
+          <div class="product-model">Model: GS-24LM6L</div>
+          <div class="product-type">27000 BTUs - 2 Ton</div>
+      </div>
+      <div class="popover" id="popover1">
+          <p>This is more detailed information about the product that appears when hovering over the product.</p>
+      </div>
+  </div>
+  
+  <!-- Modal structure for product details -->
+  <div id="productModal" style="display:none;">
+      <div class="modal-content">
+          <span class="close" onclick="closeProductDetails()">×</span>
+          <h2>Product Details</h2>
+          <div class="product-details-content">
+                <img src="data:image/jpeg;base64,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" alt="Gree AC Pular">
+              <p>Here you can put more detailed product information, specifications, and other relevant details.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="product-card" onclick="showProductDetails()">
+    <img src="data:image/jpeg;base64,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" alt="Gree AC Pular 1.5 Ton">
+    <div class="product-info">
+        <div class="product-name">GREE Split Window AC lomo series(Fixed Speed)</div>
+        <div class="product-price">PKR 275,900</div>
+        <div class="product-model">Model: GS-24LM6L</div>
+        <div class="product-type">25000 BTUs - 2 Ton</div>
+    </div>
+    <div class="popover" id="popover1">
+        <p>This is more detailed information about the product that appears when hovering over the product.</p>
+    </div>
+</div>
+
+<!-- Modal structure for product details -->
+<div id="productModal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeProductDetails()">×</span>
+        <h2>Product Details</h2>
+        <div class="product-details-content">
+                        <img src="data:image/jpeg;base64,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" alt="Gree AC Pular 1.5 Ton">
+            <p>Here you can put more detailed product information, specifications, and other relevant details.</p>
+        </div>
+    </div>
+</div>
+
+<div class="product-card" onclick="showProductDetails()">
+<img src="ac7.jpg" alt="Gree AC Lomo">
+  <div class="product-info">
+      <div class="product-name">GREE Split Air Cooler Lomo Series (Fixed Speed)</div>
+      <div class="product-price">PKR 135,900</div>
+      <div class="product-model">Model: GS-24LM6L</div>
+      <div class="product-type">24000 BTUs - 2 Ton</div>
+  </div>
+  <div class="popover" id="popover1">
+      <p>This is more detailed information about the product that appears when hovering over the product.</p>
+  </div>
+</div>
+
+<!-- Modal structure for product details -->
+<div id="productModal" style="display:none;">
+  <div class="modal-content">
+      <span class="close" onclick="closeProductDetails()">×</span>
+      <h2>Product Details</h2>
+      <div class="product-details-content">
+         <img src="ac7.jpg" alt="Gree AC Lomo">
+          <p>Here you can put more detailed product information, specifications, and other relevant details.</p>
+      </div>
+  </div>
+</div>
+<div class="product-card" onclick="showProductDetails()">
+  <img src="ac5.jpg" alt="Gree AC Lomo">
+  <div class="product-info">
+      <div class="product-name">GREE Split Window AC Lomo Series (Fixed Speed)</div>
+      <div class="product-price">PKR 225,900</div>
+      <div class="product-model">Model: GS-24LM6L</div>
+      <div class="product-type">25000 BTUs - 2 Ton</div>
+  </div>
+  <div class="popover" id="popover1">
+      <p>This is more detailed information about the product that appears when hovering over the product.</p>
+  </div>
+</div>
+
+<!-- Modal structure for product details -->
+<div id="productModal" style="display:none;">
+  <div class="modal-content">
+      <span class="close" onclick="closeProductDetails()">×</span>
+      <h2>Product Details</h2>
+      <div class="product-details-content">
+          <img src="ac5.jpg" alt="Gree AC Lomo">
+          <p>Here you can put more detailed product information, specifications, and other relevant details.</p>
+      </div>
+  </div>
+</div>
+
+<div class="product-card" onclick="showProductDetails()">
+  <img src="ac6.jpg" alt="Gree AC Lomo">
+  <div class="product-info">
+      <div class="product-name">GREE Split Stander AC Lomo Series (Fixed Speed)</div>
+      <div class="product-price">PKR 215,900</div>
+      <div class="product-model">Model: GS-24LM6L</div>
+      <div class="product-type">26000 BTUs - 2 Ton</div>
+  </div>
+  <div class="popover" id="popover1">
+      <p>This is more detailed information about the product that appears when hovering over the product.</p>
+  </div>
+</div>
+
+<!-- Modal structure for product details -->
+<div id="productModal" style="display:none;">
+  <div class="modal-content">
+      <span class="close" onclick="closeProductDetails()">×</span>
+      <h2>Product Details</h2>
+      <div class="product-details-content">
+          <img src="ac6.jpg" alt="Gree AC Lomo">
+          <p>Here you can put more detailed product information, specifications, and other relevant details.</p>
+      </div>
+  </div>
+</div>
+    </div>
+  
+  <script>
+   
+    function showProductDetails() {
+        document.getElementById("productModal").style.display = "block";
+    }
+
+    function closeProductDetails() {
+        document.getElementById("productModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target === document.getElementById("productModal")) {
+            closeProductDetails();
+        }
+    }
+</script>
+
+</body>
+</html>
+
