@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Rheem</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #d32f2f;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .contact-container {
+      width: 50%;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 16px;
+      color: #333;
+      margin-top: 10px;
+      display: block;
+    }
+
+    input[type="text"], input[type="email"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .footer {
+      background-color: #d32f2f;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+    }
+
+    .form-section {
+      margin-bottom: 30px;
+    }
+
+    .form-section h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+<div id="Contact us">
+  <header>
+    <h1>Contact Rheem</h1>
+  </header>
+
+  <div class="contact-container">
+    <h2>Please fill out the form below:</h2>
+
+    <div class="form-section">
+      <h2>Personal Contact Information</h2>
+      <form action="#" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="address1">Address 1:</label>
+        <input type="text" id="address1" name="address1" required>
+
+        <label for="address2">Address 2:</label>
+        <input type="text" id="address2" name="address2">
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="province">Province:</label>
+        <select name="province" id="province" required>
+          <option value="ALB">Alabama</option>
+          <option value="ALS">Alaska</option>
+          <option value="ARZ">Arizona</option>
+          <option value="CAL">California</option>
+        </select>
+
+        <label for="country">Country:</label>
+        <select name="country" id="country" required>
+          <option value="USA">United States</option>
+          <option value="CAN">Canada</option>
+          <option value="MEX">Mexico</option>
+          <option value="UK">United Kingdom</option>
+        </select>
+
+        <label for="postal">Postal Code:</label>
+        <input type="text" id="postal" name="postal" required>
+
+        <label for="company">Company Name:</label>
+        <input type="text" id="company" name="company">
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </form>
+    </div>
+
+    <div class="form-section">
+      <h2>Product Information</h2>
+      <form action="#" method="POST">
+        <label for="model">Model Number:</label>
+        <input type="text" id="model" name="model" required>
+
+        <label for="serial">Serial Number:</label>
+        <input type="text" id="serial" name="serial" required>
+
+        <label for="contractor">Contractor/Plumber Name:</label>
+        <input type="text" id="contractor" name="contractor">
+
+        <label for="contractor-phone">Contractor/Plumber Phone:</label>
+        <input type="text" id="contractor-phone" name="contractor-phone">
+
+        <label for="message">Comments:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit" class="submit-btn">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Rheem Cooling | All Rights Reserved</p>
+  </div>
+</div>
+</body>
+</html>
